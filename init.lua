@@ -44,3 +44,4 @@ require("oil-git-status").setup({
 })
 
 require("Comment").setup()
+require("cord").setup()
