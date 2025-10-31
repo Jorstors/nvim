@@ -32,11 +32,11 @@ return {
       require("opencode").toggle()
     end, { desc = "Toggle opencode" })
 
-    vim.keymap.set("n", "<C-u>", function()
+    vim.keymap.set("n", "<S-C-u>", function()
       require("opencode").command("messages_half_page_up")
     end, { desc = "opencode half page up" })
 
-    vim.keymap.set("n", "<C-d>", function()
+    vim.keymap.set("n", "<S-C-d>", function()
       require("opencode").command("messages_half_page_down")
     end, { desc = "opencode half page down" })
     -- You may want these if you stick with the opinionated "<C-a>" and "<C-x>" above — otherwise consider "<leader>o".
