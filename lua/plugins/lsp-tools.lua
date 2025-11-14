@@ -6,7 +6,7 @@ return {
       ensure_installed = {
         -- Python
         "basedpyright",
-        "ruff",
+        "pylint",
         "black",
         "debugpy",
 
