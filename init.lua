@@ -1,3 +1,8 @@
+-- Enable lazy loading for faster startup
+if vim.loader and vim.loader.enable then
+  vim.loader.enable()
+end
+
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 require("keymaps")
@@ -47,7 +52,6 @@ require("Comment").setup()
 require("cord").setup()
 
 require("tiny-inline-diagnostic").setup({
-  -- ...
   signs = {
     left = "",
     right = "",
@@ -62,3 +66,9 @@ require("tiny-inline-diagnostic").setup({
   },
   -- ...
 })
+
+-- Remove diagnostic squiggle underlines globally (after all plugins/colorscheme)
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { underline = false, undercurl = false })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { underline = false, undercurl = false })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { underline = false, undercurl = false })
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", { underline = false, undercurl = false })
