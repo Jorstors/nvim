@@ -48,7 +48,7 @@ require("oil-git-status").setup({
 })
 
 require("Comment").setup()
-require("cord").setup()
+-- require("cord").setup()
 
 require("tiny-inline-diagnostic").setup({
   signs = {
