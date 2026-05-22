@@ -13,9 +13,10 @@ return {
       end
 
       -- Pretty borders for hover/signature floats
-      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-      vim.lsp.handlers["textDocument/signatureHelp"] =
-        vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+      vim.lsp.handlers.hover = vim.lsp.handlers.hover or {}
+      vim.lsp.handlers.hover.border = "rounded"
+      vim.lsp.handlers.signature_help = vim.lsp.handlers.signature_help or {}
+      vim.lsp.handlers.signature_help.border = "rounded"
 
       -- Hover docs on 'K'
       vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr, silent = true, desc = "LSP Hover" })
