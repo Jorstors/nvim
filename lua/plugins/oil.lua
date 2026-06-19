@@ -12,5 +12,5 @@ return {
   dependencies = {
     { "nvim-mini/mini.icons", opts = {} },
   },
-  lazy = false,
+  cmd = "Oil",
 }

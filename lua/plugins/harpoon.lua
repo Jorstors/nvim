@@ -2,39 +2,17 @@ return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
   dependencies = { "nvim-lua/plenary.nvim" },
+  keys = {
+    { "<leader>a", function() require("harpoon"):list():add() end, desc = "Harpoon: Add file" },
+    { "<C-e>", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end, desc = "Harpoon: Toggle quick menu" },
+    { "<a-1>", function() require("harpoon"):list():select(1) end, desc = "Harpoon: Go to file 1" },
+    { "<a-2>", function() require("harpoon"):list():select(2) end, desc = "Harpoon: Go to file 2" },
+    { "<a-3>", function() require("harpoon"):list():select(3) end, desc = "Harpoon: Go to file 3" },
+    { "<a-4>", function() require("harpoon"):list():select(4) end, desc = "Harpoon: Go to file 4" },
+    { "<C-S-P>", function() require("harpoon"):list():prev() end, desc = "Harpoon: Previous file" },
+    { "<C-S-N>", function() require("harpoon"):list():next() end, desc = "Harpoon: Next file" },
+  },
   config = function()
-    -- REQUIRED: Setup Harpoon
-    local harpoon = require("harpoon")
-    harpoon:setup()
-
-    -- Basic Harpoon keymaps
-    vim.keymap.set("n", "<leader>a", function()
-      harpoon:list():add()
-    end, { desc = "Harpoon: Add file" })
-    vim.keymap.set("n", "<C-e>", function()
-      harpoon.ui:toggle_quick_menu(harpoon:list())
-    end, { desc = "Harpoon: Toggle quick menu" })
-
-    -- Navigate between the first four harpooned files
-    vim.keymap.set("n", "<a-1>", function()
-      harpoon:list():select(1)
-    end, { desc = "Harpoon: Go to file 1" })
-    vim.keymap.set("n", "<a-2>", function()
-      harpoon:list():select(2)
-    end, { desc = "Harpoon: Go to file 2" })
-    vim.keymap.set("n", "<a-3>", function()
-      harpoon:list():select(3)
-    end, { desc = "Harpoon: Go to file 3" })
-    vim.keymap.set("n", "<a-4>", function()
-      harpoon:list():select(4)
-    end, { desc = "Harpoon: Go to file 4" })
-
-    -- Navigate next and previous
-    vim.keymap.set("n", "<C-S-P>", function()
-      harpoon:list():prev()
-    end, { desc = "Harpoon: Previous file" })
-    vim.keymap.set("n", "<C-S-N>", function()
-      harpoon:list():next()
-    end, { desc = "Harpoon: Next file" })
+    require("harpoon"):setup()
   end,
 }
