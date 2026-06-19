@@ -27,12 +27,15 @@ return {
 
         -- C/C++
         "clangd",
-        "clang-format",
 
         -- Shell
         "bash-language-server",
         "shfmt",
         "shellcheck",
+
+        -- Azure
+        "bicep-lsp",
+        "azure-pipelines-language-server",
       },
     },
   },
