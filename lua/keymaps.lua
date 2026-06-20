@@ -24,5 +24,3 @@ vim.keymap.set("n", "<leader>fz", ":Telescope lsp_document_symbols ignore_symbol
 -- oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
--- noice
-vim.keymap.set("n", "<leader>N", "<CMD>NoiceSnacks<CR>", { desc = "Open NoiceSnacks" })
