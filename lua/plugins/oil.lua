@@ -8,6 +8,10 @@ return {
     win_options = {
       signcolumn = "auto:2",
     },
+    keymaps = {
+      ["<C-h>"] = false,
+      ["<C-l>"] = false,
+    },
   },
   dependencies = {
     { "nvim-mini/mini.icons", opts = {} },
